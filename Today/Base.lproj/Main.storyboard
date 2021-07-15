@@ -30,6 +30,9 @@
                                                 <constraint firstAttribute="width" secondItem="fX9-WP-QD0" secondAttribute="height" multiplier="1:1" id="YqM-Hu-Ahq"/>
                                             </constraints>
                                             <state key="normal" backgroundImage="circle" catalog="system"/>
+                                            <connections>
+                                                <action selector="doneButtonTriggered:" destination="lDe-Dn-WP4" eventType="touchUpInside" id="MkY-PE-Fx7"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRv-Qn-2qw">
                                             <rect key="frame" x="72" y="49" width="298" height="21"/>
