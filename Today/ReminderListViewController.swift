@@ -9,8 +9,6 @@ import UIKit
 
 class ReminderListViewController: UITableViewController {
     
-   
-
 }
 
 

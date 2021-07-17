@@ -61,7 +61,6 @@ extension ReminderDetailViewController {
         cell.textLabel?.text = row?.displayText(for: reminder)
         cell.imageView?.image = row?.cellImage
         
-        
         return cell
     }
 }
