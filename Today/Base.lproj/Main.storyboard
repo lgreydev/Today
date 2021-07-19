@@ -104,6 +104,54 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditTitleCell" id="ihb-ST-PBV">
+                                <rect key="frame" x="0.0" y="68.000001907348633" width="390" height="34.333332061767578"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ihb-ST-PBV" id="EBc-oB-rJ4">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="34.333332061767578"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TextField" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1eX-dG-YdX">
+                                            <rect key="frame" x="20" y="0.0" width="350" height="34.333333333333336"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="1eX-dG-YdX" secondAttribute="bottom" id="3el-Pc-6G9"/>
+                                        <constraint firstItem="1eX-dG-YdX" firstAttribute="top" secondItem="EBc-oB-rJ4" secondAttribute="top" id="XdP-BJ-qzV"/>
+                                        <constraint firstItem="1eX-dG-YdX" firstAttribute="leading" secondItem="EBc-oB-rJ4" secondAttribute="leading" constant="20" symbolic="YES" id="oKs-Nr-yD8"/>
+                                        <constraint firstAttribute="trailing" secondItem="1eX-dG-YdX" secondAttribute="trailing" constant="20" symbolic="YES" id="qH1-XB-On0"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditNotesCell" rowHeight="216" id="hrQ-1D-0n5">
+                                <rect key="frame" x="0.0" y="102.33333396911621" width="390" height="216"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hrQ-1D-0n5" id="zcc-Dd-fXo">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="216"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hR2-hL-dGx">
+                                            <rect key="frame" x="20" y="11" width="350" height="194"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="194" id="c6m-Je-5AO"/>
+                                            </constraints>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <color key="textColor" systemColor="labelColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="hR2-hL-dGx" secondAttribute="trailing" id="FJg-3P-7Nq"/>
+                                        <constraint firstItem="hR2-hL-dGx" firstAttribute="top" secondItem="zcc-Dd-fXo" secondAttribute="topMargin" id="b8l-eI-e7z"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="hR2-hL-dGx" secondAttribute="bottom" id="nGM-Bv-wGr"/>
+                                        <constraint firstItem="hR2-hL-dGx" firstAttribute="leading" secondItem="zcc-Dd-fXo" secondAttribute="leadingMargin" id="q0y-9y-LNg"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="0EB-IW-XcW" id="Emc-pn-V7b"/>
@@ -114,7 +162,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83q-OK-hwf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1471" y="74"/>
+            <point key="canvasLocation" x="1470.7692307692307" y="73.93364928909952"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DdY-dI-ZR2">
@@ -137,6 +185,9 @@
     </scenes>
     <resources>
         <image name="circle" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
