@@ -21,7 +21,7 @@
 		5E59749B26A5608F006DD0DC /* ReminderDetailViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E59749A26A5608F006DD0DC /* ReminderDetailViewDataSource.swift */; };
 		5E5974A026A6E138006DD0DC /* EditTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E59749F26A6E138006DD0DC /* EditTitleCell.swift */; };
 		5E5974A226A6E1E7006DD0DC /* EditDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5974A126A6E1E7006DD0DC /* EditDateCell.swift */; };
-		5E5974A426A6E343006DD0DC /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5974A326A6E343006DD0DC /* File.swift */; };
+		5E5974A426A6E343006DD0DC /* EditNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5974A326A6E343006DD0DC /* EditNotesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +41,7 @@
 		5E59749A26A5608F006DD0DC /* ReminderDetailViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailViewDataSource.swift; sourceTree = "<group>"; };
 		5E59749F26A6E138006DD0DC /* EditTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTitleCell.swift; sourceTree = "<group>"; };
 		5E5974A126A6E1E7006DD0DC /* EditDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDateCell.swift; sourceTree = "<group>"; };
-		5E5974A326A6E343006DD0DC /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		5E5974A326A6E343006DD0DC /* EditNotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 				5E2F9E5D269F2ED7002AAC05 /* ReminderListCell.swift */,
 				5E59749F26A6E138006DD0DC /* EditTitleCell.swift */,
 				5E5974A126A6E1E7006DD0DC /* EditDateCell.swift */,
-				5E5974A326A6E343006DD0DC /* File.swift */,
+				5E5974A326A6E343006DD0DC /* EditNotesCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,7 +182,7 @@
 				5E2F9E48269ED663002AAC05 /* SceneDelegate.swift in Sources */,
 				5E5974A226A6E1E7006DD0DC /* EditDateCell.swift in Sources */,
 				5E2F9E5A269ED9F6002AAC05 /* Reminder.swift in Sources */,
-				5E5974A426A6E343006DD0DC /* File.swift in Sources */,
+				5E5974A426A6E343006DD0DC /* EditNotesCell.swift in Sources */,
 				5E59749926A4C416006DD0DC /* ReminderListDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
