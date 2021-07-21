@@ -22,6 +22,7 @@
 		5E5974A026A6E138006DD0DC /* EditTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E59749F26A6E138006DD0DC /* EditTitleCell.swift */; };
 		5E5974A226A6E1E7006DD0DC /* EditDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5974A126A6E1E7006DD0DC /* EditDateCell.swift */; };
 		5E5974A426A6E343006DD0DC /* EditNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5974A326A6E343006DD0DC /* EditNotesCell.swift */; };
+		5E5974A626A85E4F006DD0DC /* DetailEditDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5974A526A85E4F006DD0DC /* DetailEditDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		5E59749F26A6E138006DD0DC /* EditTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTitleCell.swift; sourceTree = "<group>"; };
 		5E5974A126A6E1E7006DD0DC /* EditDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDateCell.swift; sourceTree = "<group>"; };
 		5E5974A326A6E343006DD0DC /* EditNotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotesCell.swift; sourceTree = "<group>"; };
+		5E5974A526A85E4F006DD0DC /* DetailEditDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				5E2F9E4E269ED667002AAC05 /* Assets.xcassets */,
 				5E2F9E50269ED667002AAC05 /* LaunchScreen.storyboard */,
 				5E2F9E4B269ED663002AAC05 /* Main.storyboard */,
+				5E5974A526A85E4F006DD0DC /* DetailEditDataSource.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				5E5974A026A6E138006DD0DC /* EditTitleCell.swift in Sources */,
 				5E2F9E46269ED663002AAC05 /* AppDelegate.swift in Sources */,
 				5E59749726A089EE006DD0DC /* ReminderDetailViewController.swift in Sources */,
+				5E5974A626A85E4F006DD0DC /* DetailEditDataSource.swift in Sources */,
 				5E59749B26A5608F006DD0DC /* ReminderDetailViewDataSource.swift in Sources */,
 				5E2F9E48269ED663002AAC05 /* SceneDelegate.swift in Sources */,
 				5E5974A226A6E1E7006DD0DC /* EditDateCell.swift in Sources */,
