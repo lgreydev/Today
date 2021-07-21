@@ -24,6 +24,13 @@ class ReminderDetailEditDataSource: NSObject {
             }
         }
         
+        var numRows: Int {
+            switch self {
+            case .title, .notes: return 1
+            case .dueDate: return 2
+            }
+        }
+        
         func cellIdentifier(for row: Int) -> String {
             switch self {
             case .title:
@@ -35,6 +42,12 @@ class ReminderDetailEditDataSource: NSObject {
             }
         }
     }
+    
+    var reminder: Reminder
+    
+    init(reminder: Reminder) {
+        self.reminder = reminder
+    }
 }
 
 extension ReminderDetailEditDataSource: UITableViewDataSource {
@@ -43,13 +56,12 @@ extension ReminderDetailEditDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return ReminderSection(rawValue: section)?.numRows ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         fatalError()
     }
-    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let section = ReminderSection(rawValue: section) else {
             fatalError("Section index out of range")
