@@ -1,5 +1,5 @@
 //
-//  DetailEditDataSource.swift
+//  ReminderDetailEditDataSource.swift
 //  Today
 //
 //  Created by Sergey Lukaschuk on 21.07.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailEditDataSource: NSObject {
+class ReminderDetailEditDataSource: NSObject {
     enum ReminderSection: Int, CaseIterable {
         case title
         case dueDate
@@ -37,4 +37,23 @@ class DetailEditDataSource: NSObject {
     }
 }
 
-
+extension ReminderDetailEditDataSource: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return ReminderSection.allCases.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        fatalError()
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let section = ReminderSection(rawValue: section) else {
+            fatalError("Section index out of range")
+        }
+        return section.displayText
+    }
+}
