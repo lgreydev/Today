@@ -50,11 +50,11 @@ class ReminderDetailEditDataSource: NSObject {
     var reminder: Reminder
     
     private lazy var formatter: DateFormatter = {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .full
-            formatter.timeStyle = .short
-            return formatter
-        }()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        formatter.timeStyle = .short
+        return formatter
+    }()
     
     init(reminder: Reminder) {
         self.reminder = reminder
@@ -70,7 +70,9 @@ class ReminderDetailEditDataSource: NSObject {
         switch section {
         case .title:
             if let titleCell = cell as? EditTitleCell {
-                titleCell.configure(title: reminder.title)
+                titleCell.configure(title: reminder.title) { title in
+                    self.reminder.title = title
+                }
             }
         case .dueDate:
             if indexPath.row == 0 {
@@ -93,14 +95,15 @@ extension ReminderDetailEditDataSource: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return ReminderSection.allCases.count
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ReminderSection(rawValue: section)?.numRows ?? 0
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return dequeueAndConfigureCell(for: indexPath, from: tableView)
     }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let section = ReminderSection(rawValue: section) else {
             fatalError("Section index out of range")
@@ -109,6 +112,6 @@ extension ReminderDetailEditDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-            return false
-        }
+        return false
+    }
 }
