@@ -9,17 +9,23 @@ import UIKit
 
 class ReminderListViewController: UITableViewController {
     
-    private var reminderListDataSource: ReminderListDataSource?
-    
     static let showDetailSegueIdentifier = "ShowReminderDetailSegue"
+    
+    private var reminderListDataSource: ReminderListDataSource?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Self.showDetailSegueIdentifier,
            let destination = segue.destination as? ReminderDetailViewController,
            let cell = sender as? UITableViewCell,
            let indexPath = tableView.indexPath(for: cell) {
-            let reminder = Reminder.testData[indexPath.row]
-            destination.configure(with: reminder)
+            let rowIndex = indexPath.row
+            guard let reminder = reminderListDataSource?.reminder(at: rowIndex) else {
+                fatalError("Couldn't find data source for reminder list.")
+            }
+            destination.configure(with: reminder) { reminder in
+                self.reminderListDataSource?.update(reminder, at: rowIndex)
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
         }
     }
     
@@ -29,4 +35,3 @@ class ReminderListViewController: UITableViewController {
         tableView.dataSource = reminderListDataSource
     }
 }
-
