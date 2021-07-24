@@ -34,4 +34,15 @@ class ReminderListViewController: UITableViewController {
         reminderListDataSource = ReminderListDataSource()
         tableView.dataSource = reminderListDataSource
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let navigationController = navigationController,
+           navigationController.isToolbarHidden {
+            navigationController.setToolbarHidden(false, animated: animated)
+        }
+    }
+    
+    @IBAction func addButtonTriggered(_ sender: UIBarButtonItem) {
+    }
 }
