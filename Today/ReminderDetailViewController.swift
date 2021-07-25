@@ -52,11 +52,17 @@ class ReminderDetailViewController: UITableViewController {
             dataSource = ReminderDetailEditDataSource(reminder: reminder) { reminder in
                 self.tempReminder = reminder
                 self.editButtonItem.isEnabled = true
-            }
+            } 
             navigationItem.title = isNew ? NSLocalizedString("Add Reminder", comment: "add reminder nav title") :
-                                                  NSLocalizedString("Edit Reminder", comment: "edit reminder nav title")
+                NSLocalizedString("Edit Reminder", comment: "edit reminder nav title")
             navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTrigger))
         } else {
+            if isNew {
+                let addReminder = tempReminder ?? reminder
+                dismiss(animated: true) {
+                    self.reminderAddAction?(addReminder)
+                }
+            }
             if let tempReminder = tempReminder {
                 self.reminder = tempReminder
                 self.tempReminder = nil
@@ -75,6 +81,11 @@ class ReminderDetailViewController: UITableViewController {
     
     @objc
     func cancelButtonTrigger() {
-        setEditing(false, animated: true)
+        if isNew {
+            dismiss(animated: true, completion: nil)
+        } else {
+            tempReminder = nil
+            setEditing(false, animated: true)
+        }
     }
 }
