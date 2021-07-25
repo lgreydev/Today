@@ -43,6 +43,20 @@ class ReminderDetailViewController: UITableViewController {
         }
     }
     
+    fileprivate func transitionToViewMode(_ reminder: Reminder) {
+        if let tempReminder = tempReminder {
+            self.reminder = tempReminder
+            self.tempReminder = nil
+            reminderEditAction?(tempReminder)
+            dataSource = ReminderDetailViewDataSource(reminder: tempReminder)
+        } else {
+            dataSource = ReminderDetailViewDataSource(reminder: reminder)
+        }
+        navigationItem.title = NSLocalizedString("View Reminder", comment: "view reminder nav title")
+        navigationItem.leftBarButtonItem = nil
+        editButtonItem.isEnabled = true
+    }
+    
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         guard let reminder = reminder else {
@@ -63,17 +77,7 @@ class ReminderDetailViewController: UITableViewController {
                     self.reminderAddAction?(addReminder)
                 }
             }
-            if let tempReminder = tempReminder {
-                self.reminder = tempReminder
-                self.tempReminder = nil
-                reminderEditAction?(tempReminder)
-                dataSource = ReminderDetailViewDataSource(reminder: tempReminder)
-            } else {
-                dataSource = ReminderDetailViewDataSource(reminder: reminder)
-            }
-            navigationItem.title = NSLocalizedString("View Reminder", comment: "view reminder nav title")
-            navigationItem.leftBarButtonItem = nil
-            editButtonItem.isEnabled = true
+            transitionToViewMode(reminder)
         }
         tableView.dataSource = dataSource
         tableView.reloadData()
