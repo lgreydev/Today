@@ -1,7 +1,6 @@
 //
 //  ReminderListViewController.swift
 //  Today
-//}}`
 //  Created by Sergey Lukaschuk on 14.07.2021.
 //
 
@@ -10,6 +9,11 @@ import UIKit
 class ReminderListViewController: UITableViewController {
     
     @IBOutlet var filterSegmentedControl: UISegmentedControl!
+    @IBOutlet var progressContainerView: UIView!
+    @IBOutlet var percentCompleteView: UIView!
+    @IBOutlet var percentIncompleteView: UIView!
+    @IBOutlet var percentCompleteHeightConstraint: NSLayoutConstraint!
+    
     
     static let showDetailSegueIdentifier = "ShowReminderDetailSegue"
     static let mainStoryboardName = "Main"
@@ -42,6 +46,13 @@ class ReminderListViewController: UITableViewController {
         tableView.dataSource = reminderListDataSource
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let radius = view.bounds.size.width * 0.5 * 0.7
+        progressContainerView.layer.cornerRadius = radius
+        progressContainerView.layer.masksToBounds = true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let navigationController = navigationController,
@@ -60,15 +71,15 @@ class ReminderListViewController: UITableViewController {
     }
     
     private func addReminder() {
-            let storyboard = UIStoryboard(name: Self.mainStoryboardName, bundle: nil)
-            let detailViewController: ReminderDetailViewController = storyboard.instantiateViewController(identifier: Self.detailViewControllerIdentifier)
-            let reminder = Reminder(id: UUID().uuidString, title: "New Reminder", dueDate: Date())
-            detailViewController.configure(with: reminder, isNew: true, addAction: { reminder in
-                if let index = self.reminderListDataSource?.add(reminder) {
-                    self.tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
-                }
-            })
-            let navigationController = UINavigationController(rootViewController: detailViewController)
-            present(navigationController, animated: true, completion: nil)
-        }
+        let storyboard = UIStoryboard(name: Self.mainStoryboardName, bundle: nil)
+        let detailViewController: ReminderDetailViewController = storyboard.instantiateViewController(identifier: Self.detailViewControllerIdentifier)
+        let reminder = Reminder(id: UUID().uuidString, title: "New Reminder", dueDate: Date())
+        detailViewController.configure(with: reminder, isNew: true, addAction: { reminder in
+            if let index = self.reminderListDataSource?.add(reminder) {
+                self.tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+            }
+        })
+        let navigationController = UINavigationController(rootViewController: detailViewController)
+        present(navigationController, animated: true, completion: nil)
+    }
 }

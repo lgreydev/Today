@@ -121,7 +121,7 @@
                     <navigationItem key="navigationItem" id="oIn-wA-Bie">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Vmz-lj-QaM">
-                            <rect key="frame" x="105.66666666666669" y="5.6666666666666679" width="179" height="33"/>
+                            <rect key="frame" x="105.66666666666669" y="6" width="179" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Today"/>
@@ -136,6 +136,10 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="filterSegmentedControl" destination="Vmz-lj-QaM" id="Ux4-gm-0FK"/>
+                        <outlet property="percentCompleteHeightConstraint" destination="0A0-16-Wwr" id="tdM-GB-XnK"/>
+                        <outlet property="percentCompleteView" destination="lyL-zC-f9L" id="FmQ-ER-tPg"/>
+                        <outlet property="percentIncompleteView" destination="rjB-zu-mko" id="KST-ak-uSw"/>
+                        <outlet property="progressContainerView" destination="0A0-16-Wwr" id="7Da-uy-myQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mwe-dE-Jdu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
