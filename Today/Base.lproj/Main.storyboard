@@ -19,25 +19,40 @@
                             <rect key="frame" x="0.0" y="0.0" width="390" height="414"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0A0-16-Wwr" userLabel="Progress Container View">
-                                    <rect key="frame" x="75" y="87" width="240" height="240"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0A0-16-Wwr" userLabel="Progress Container View">
+                                    <rect key="frame" x="58.666666666666657" y="70.666666666666686" width="273" height="273"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lyL-zC-f9L" userLabel="Percent Complete View">
-                                            <rect key="frame" x="0.0" y="120" width="240" height="120"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyL-zC-f9L" userLabel="Percent Complete View">
+                                            <rect key="frame" x="0.0" y="127" width="273" height="146"/>
                                             <color key="backgroundColor" systemColor="systemTealColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="146" id="vwR-2F-Qex"/>
+                                            </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rjB-zu-mko" userLabel="Percent Incomplete View">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="120"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rjB-zu-mko" userLabel="Percent Incomplete View">
+                                            <rect key="frame" x="0.0" y="0.0" width="273" height="127"/>
                                             <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="rjB-zu-mko" secondAttribute="trailing" id="Brp-8i-C05"/>
+                                        <constraint firstAttribute="bottom" secondItem="lyL-zC-f9L" secondAttribute="bottom" id="Dbe-of-GHD"/>
+                                        <constraint firstAttribute="width" secondItem="0A0-16-Wwr" secondAttribute="height" multiplier="1:1" id="GxT-PZ-Ars"/>
+                                        <constraint firstItem="rjB-zu-mko" firstAttribute="leading" secondItem="0A0-16-Wwr" secondAttribute="leading" id="YKm-LY-L3k"/>
+                                        <constraint firstItem="lyL-zC-f9L" firstAttribute="top" secondItem="rjB-zu-mko" secondAttribute="bottom" id="Z9e-9U-XYe"/>
+                                        <constraint firstItem="lyL-zC-f9L" firstAttribute="leading" secondItem="0A0-16-Wwr" secondAttribute="leading" id="b6d-jJ-9PO"/>
+                                        <constraint firstAttribute="trailing" secondItem="lyL-zC-f9L" secondAttribute="trailing" id="klf-nh-PBY"/>
+                                        <constraint firstItem="rjB-zu-mko" firstAttribute="top" secondItem="0A0-16-Wwr" secondAttribute="top" id="yho-xp-K2b"/>
+                                    </constraints>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstItem="0A0-16-Wwr" firstAttribute="centerX" secondItem="kDP-zy-Pet" secondAttribute="centerX" id="7kT-aN-b41"/>
+                                <constraint firstItem="0A0-16-Wwr" firstAttribute="centerY" secondItem="kDP-zy-Pet" secondAttribute="centerY" id="LPc-SK-FuN"/>
+                                <constraint firstItem="0A0-16-Wwr" firstAttribute="width" secondItem="kDP-zy-Pet" secondAttribute="width" multiplier="0.7" id="mcf-kI-5Jc"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ReminderListCell" rowHeight="99" id="lDe-Dn-WP4" customClass="ReminderListCell" customModule="Today" customModuleProvider="target">
