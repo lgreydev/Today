@@ -77,9 +77,21 @@ class ReminderListViewController: UITableViewController {
         detailViewController.configure(with: reminder, isNew: true, addAction: { reminder in
             if let index = self.reminderListDataSource?.add(reminder) {
                 self.tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+                self.refreshProgressView()
             }
         })
         let navigationController = UINavigationController(rootViewController: detailViewController)
         present(navigationController, animated: true, completion: nil)
+    }
+    
+    private func refreshProgressView() {
+        guard let percentComplete = reminderListDataSource?.percentComplete else {
+            return
+        }
+        let totalHeight = progressContainerView.bounds.size.height
+        percentCompleteHeightConstraint.constant = totalHeight * CGFloat(percentComplete)
+        UIView.animate(withDuration: 0.2) {
+            self.progressContainerView.layoutSubviews()
+        }
     }
 }
